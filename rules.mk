@@ -1,22 +1,36 @@
-# MCU name
-MCU = STM32F103x8
+# MCU
+MCU = STM32F103
 
-# Bootloader selection
+# Bootloader
 BOOTLOADER = stm32duino
 
+# Features
+BOOTMAGIC_ENABLE = no
+MOUSEKEY_ENABLE = no
+EXTRAKEY_ENABLE = no
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+SLEEP_LED_ENABLE = no
+NKRO_ENABLE = yes
+BACKLIGHT_ENABLE = no
 
-
-
-BOOTMAGIC_ENABLE ?= lite	# Virtual DIP switch configuration
-MOUSEKEY_ENABLE ?= no	# Mouse keys
-EXTRAKEY_ENABLE ?= yes	# Audio control and System control
-CONSOLE_ENABLE ?= no	# Console for debug
-COMMAND_ENABLE ?= no    # Commands for debug and configuration
-SLEEP_LED_ENABLE ?= no  # Breathing sleep LED during USB suspend
-NKRO_ENABLE ?= yes	    # USB Nkey Rollover
-BACKLIGHT_ENABLE ?= no
-RGBLIGHT_ENABLE ?= yes
-VIA_ENABLE ?= yes
+# RGB Matrix
 RGB_MATRIX_ENABLE = yes
-RGB_MATRIX_DRIVER = WS2812
-ENCODER_ENABLE = yes
+RGB_MATRIX_DRIVER = ws2812
+
+# VIA support
+VIA_ENABLE = yes
+LTO_ENABLE = yes
+VIA_V3_ENABLE = yes
+
+# Encoder support (如果有编码器)
+ENCODER_ENABLE = no
+
+# Optional settings for RGB Matrix
+RGB_MATRIX_KEYPRESSES = yes
+RGB_MATRIX_FRAMEBUFFER_EFFECTS = yes
+RGB_MATRIX_MAXIMUM_BRIGHTNESS = 120
+RGB_MATRIX_STARTUP_MODE = RGB_MATRIX_CYCLE_ALL
+
+SRC += kb.c
+
